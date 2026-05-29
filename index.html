@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VGym Plan – Lịch Tập AI Cá Nhân Hóa</title>
+    <meta name="description" content="Tạo lịch tập gym cá nhân hóa với AI. Nhập thông tin của bạn và nhận ngay lịch tập phù hợp nhất.">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00e5a0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="VGymPlan">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="VGym Plan – Lịch Tập AI">
+    <meta property="og:description" content="Tạo lịch tập gym cá nhân hóa với Gemini AI">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <!-- Dumbbell icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6.5 6.5h11M6.5 17.5h11M3 12h18M2 8.5h2M2 15.5h2M20 8.5h2M20 15.5h2"/>
+                </svg>
+            </div>
+            <span class="logo-text">VGym<span class="logo-accent">Plan</span></span>
+        </div>
+        <div class="header-badge">
+            <span class="badge-dot"></span>
+            AI Powered
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-tag">Được hỗ trợ bởi Gemini AI</div>
+            <h1 class="hero-title">Lịch tập <span class="gradient-text">cá nhân hóa</span><br>dành riêng cho bạn</h1>
+            <p class="hero-sub">Nhập thông tin cơ bản, AI sẽ tạo ngay lịch tập tối ưu phù hợp với mục tiêu và thể trạng của bạn.</p>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-num">10K+</span>
+                    <span class="stat-label">Lịch tập đã tạo</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">Mục tiêu hỗ trợ</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">AI</span>
+                    <span class="stat-label">Gemini 2.5 Flash</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form card -->
+        <section class="card form-card">
+            <div class="card-header">
+                <h2 class="card-title">Thông tin của bạn</h2>
+                <p class="card-sub">Điền đầy đủ để nhận lịch tập chính xác nhất</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age">Tuổi</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+                            </svg>
+                        </span>
+                        <input type="number" id="age" placeholder="25" min="10" max="80">
+                        <span class="input-unit">tuổi</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Cân nặng</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="5" r="3"/><path d="M6.5 8a6 6 0 0 0 11 0"/><path d="M3 21h18l-2-9H5z"/>
+                            </svg>
+                        </span>
+                        <input type="number" id="weight" placeholder="70" min="30" max="200">
+                        <span class="input-unit">kg</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="height">Chiều cao</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="8" y1="8" x2="12" y2="8"/><line x1="16" y1="12" x2="12" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/>
+                            </svg>
+                        </span>
+                        <input type="number" id="height" placeholder="175" min="100" max="250">
+                        <span class="input-unit">cm</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+                            </svg>
+                        </span>
+                        <select id="gender">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goal selector -->
+            <div class="form-group" style="margin-top: 8px;">
+                <label class="section-label">Mục tiêu tập luyện</label>
+                <div class="goal-grid" id="goalGrid">
+
+                    <div class="goal-card selected" data-value="Tăng cơ" onclick="selectGoal(this)">
+                        <div class="goal-icon-wrap">
+                            <!-- Muscle / trending up -->
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                            </svg>
+                        </div>
+                        <div class="goal-name">Tăng cơ</div>
+                        <div class="goal-desc">Xây dựng khối cơ</div>
+                    </div>
+
+                    <div class="goal-card" data-value="Giảm mỡ" onclick="selectGoal(this)">
+                        <div class="goal-icon-wrap">
+                            <!-- Flame / zap -->
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="goal-name">Giảm mỡ</div>
+                        <div class="goal-desc">Đốt cháy mỡ thừa</div>
+                    </div>
+
+                    <div class="goal-card" data-value="Tăng cơ/Giảm mỡ" onclick="selectGoal(this)">
+                        <div class="goal-icon-wrap">
+                            <!-- Layers -->
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+                            </svg>
+                        </div>
+                        <div class="goal-name">Tổng hợp</div>
+                        <div class="goal-desc">Tăng cơ & giảm mỡ</div>
+                    </div>
+
+                    <div class="goal-card" data-value="Tăng sức bền" onclick="selectGoal(this)">
+                        <div class="goal-icon-wrap">
+                            <!-- Activity -->
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <div class="goal-name">Sức bền</div>
+                        <div class="goal-desc">Cardio & endurance</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Level selector -->
+            <div class="form-group" style="margin-top: 16px;">
+                <label class="section-label">Cấp độ thể lực</label>
+                <div class="level-grid">
+
+                    <div class="level-card" data-value="Mới bắt đầu" onclick="selectLevel(this)">
+                        <div class="level-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                        <div class="level-name">Mới bắt đầu</div>
+                        <div class="level-desc">Chưa tập hoặc &lt; 6 tháng</div>
+                    </div>
+
+                    <div class="level-card selected" data-value="Trung bình" onclick="selectLevel(this)">
+                        <div class="level-dots">
+                            <span class="dot active"></span><span class="dot active"></span><span class="dot"></span>
+                        </div>
+                        <div class="level-name">Trung bình</div>
+                        <div class="level-desc">6 tháng – 2 năm kinh nghiệm</div>
+                    </div>
+
+                    <div class="level-card" data-value="Nâng cao" onclick="selectLevel(this)">
+                        <div class="level-dots">
+                            <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span>
+                        </div>
+                        <div class="level-name">Nâng cao</div>
+                        <div class="level-desc">2+ năm, tập đều đặn</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Days selector -->
+            <div class="form-group" style="margin-top: 16px;">
+                <label class="section-label">Số ngày tập mỗi tuần</label>
+                <div class="days-row">
+                    <button class="day-btn" data-value="3 ngày" onclick="selectDays(this)">3 ngày</button>
+                    <button class="day-btn selected" data-value="4 ngày" onclick="selectDays(this)">4 ngày</button>
+                    <button class="day-btn" data-value="5 ngày" onclick="selectDays(this)">5 ngày</button>
+                    <button class="day-btn" data-value="6 ngày" onclick="selectDays(this)">6 ngày</button>
+                </div>
+            </div>
+
+            <!-- Generate button -->
+            <button class="btn-generate" id="btn" onclick="taoLichTap()">
+                <span class="btn-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </span>
+                <span class="btn-text">Tạo lịch tập ngay</span>
+                <span class="btn-glow"></span>
+            </button>
+        </section>
+
+        <!-- Result section -->
+        <section class="card result-card" id="resultCard" style="display:none;">
+            <div class="result-header">
+                <div class="result-title-wrap">
+                    <div class="result-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="result-title">Lịch tập của bạn</h2>
+                        <p class="result-meta" id="resultMeta"></p>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button class="btn-action" id="btnCopy" onclick="copyResult()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                        Sao chép
+                    </button>
+                    <button class="btn-action btn-pdf" onclick="savePDF()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                        Lưu PDF
+                    </button>
+                </div>
+            </div>
+            <div id="ketqua" class="result-body"></div>
+        </section>
+
+        <!-- Loading -->
+        <section class="card loading-card" id="loadingCard" style="display:none;">
+            <div class="loading-content">
+                <div class="spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p class="loading-text">Đang tạo lịch tập<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+                <p class="loading-sub">Gemini AI đang phân tích thông tin của bạn</p>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="card history-card" id="historyCard" style="display:none;">
+            <div class="history-header">
+                <h2 class="history-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Lịch sử tạo lịch
+                </h2>
+                <button class="btn-clear" onclick="clearHistory()">Xóa tất cả</button>
+            </div>
+            <div id="lichsu" class="history-list"></div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 VGymPlan · Được hỗ trợ bởi <span class="footer-accent">Gemini AI</span></p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+
+</html>
